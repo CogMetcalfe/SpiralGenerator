@@ -4,6 +4,7 @@ public class SpiralMain {
 
 	public static void main(String[] args) {
 		SpiralGen.printSpiral(6);
+		SpiralGen.printSpiral(10);
 	}
 
 }

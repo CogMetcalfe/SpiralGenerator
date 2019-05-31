@@ -67,14 +67,23 @@ public class SpiralGen{
 		
 	}
 	
-	public static void printSpiral(int side) {
-		if(side<=0) {return;}
+	public static String printSpiral(int side) {
+		if(side<=0) {return "";}
 		int[][] spiral = getSpiralEZ(side);
+		String printOut="";
+		int lengthOfLargestVal = Integer.toString(side*side).length();
 		for(int y=0;y<side;y++) {
 			for(int x=0; x<side; x++) {
-				System.out.print(spiral[x][y] + ", ");
+				int val=spiral[x][y];
+				String valStr = Integer.toString(val);
+				while(valStr.length()<lengthOfLargestVal) {
+					valStr = " " + valStr;
+				}
+				printOut+=(valStr + ", ");
 			}
-			System.out.println();
+			printOut+="\n";
 		}
+		System.out.println(printOut);
+		return printOut;
 	}
 }
